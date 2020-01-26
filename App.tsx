@@ -2,14 +2,7 @@ import React from "react";
 import { StyleSheet, View } from "react-native";
 import { ApplicationProvider, Text } from "@ui-kitten/components";
 import { mapping, light as lightTheme } from "@eva-design/eva";
-
-function HomeScreen() {
-	return (
-		<View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-			<Text>Home!</Text>
-		</View>
-	);
-}
+import { BottomNavigator } from "./src/nav/BottomNavigator";
 
 export default function App() {
 	return (
@@ -17,6 +10,7 @@ export default function App() {
 			<View style={styles.container}>
 				<Text>Open up App.tsx to start working on your app!</Text>
 			</View>
+			<BottomNavigator />
 		</ApplicationProvider>
 	);
 }
