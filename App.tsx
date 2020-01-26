@@ -1,19 +1,31 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { StyleSheet, View } from "react-native";
+import { ApplicationProvider, Text } from "@ui-kitten/components";
+import { mapping, light as lightTheme } from "@eva-design/eva";
+
+function HomeScreen() {
+	return (
+		<View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+			<Text>Home!</Text>
+		</View>
+	);
+}
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-    </View>
-  );
+	return (
+		<ApplicationProvider mapping={mapping} theme={lightTheme}>
+			<View style={styles.container}>
+				<Text>Open up App.tsx to start working on your app!</Text>
+			</View>
+		</ApplicationProvider>
+	);
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+	container: {
+		flex: 1,
+		backgroundColor: "#fff",
+		alignItems: "center",
+		justifyContent: "center"
+	}
 });
