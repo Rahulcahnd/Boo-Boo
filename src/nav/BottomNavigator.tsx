@@ -2,8 +2,6 @@ import React from "react";
 import { StyleSheet, Image } from "react-native";
 import { BottomNavigation, BottomNavigationTab } from "@ui-kitten/components";
 
-import { Icon } from "@ui-kitten/components";
-
 const Settings = () => (
 	<Image
 		source={{
@@ -39,5 +37,5 @@ export const BottomNavigator = () => {
 
 const styles = StyleSheet.create({
 	bottomNavigation: { backgroundColor: "white" },
-	indicator: { backgroundColor: "black" }
+	indicator: { backgroundColor: "blue" }
 });
