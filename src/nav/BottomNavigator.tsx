@@ -1,6 +1,25 @@
 import React from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet, Image } from "react-native";
 import { BottomNavigation, BottomNavigationTab } from "@ui-kitten/components";
+
+import { Icon } from "@ui-kitten/components";
+
+const Settings = () => (
+	<Image
+		source={{
+			uri:
+				"https://akveo.github.io/eva-icons/outline/png/128/settings-2-outline.png"
+		}}
+	/>
+);
+
+const Scan = () => (
+	<Image
+		source={{
+			uri: "https://static.thenounproject.com/png/860338-200.png"
+		}}
+	/>
+);
 
 export const BottomNavigator = () => {
 	const [selectedIndex, setSelectedIndex] = React.useState(0);
@@ -12,9 +31,8 @@ export const BottomNavigator = () => {
 			selectedIndex={selectedIndex}
 			onSelect={setSelectedIndex}
 		>
-			<BottomNavigationTab title="USERS" />
-			<BottomNavigationTab title="ORDERS" />
-			<BottomNavigationTab title="TRANSACTION" />
+			<BottomNavigationTab icon={Scan} />
+			<BottomNavigationTab icon={Settings} />
 		</BottomNavigation>
 	);
 };
