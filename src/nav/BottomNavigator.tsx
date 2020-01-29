@@ -3,21 +3,10 @@ import { StyleSheet, Image } from "react-native";
 import { BottomNavigation, BottomNavigationTab } from "@ui-kitten/components";
 
 const Settings = () => (
-	<Image
-		source={{
-			uri:
-				"https://akveo.github.io/eva-icons/outline/png/128/settings-2-outline.png"
-		}}
-	/>
+	<Image source={require("../common/icons/settings.png")} />
 );
 
-const Scan = () => (
-	<Image
-		source={{
-			uri: "https://static.thenounproject.com/png/860338-200.png"
-		}}
-	/>
-);
+const Scan = () => <Image source={require("../common/icons/scanner.png")} />;
 
 export const BottomNavigator = () => {
 	const [selectedIndex, setSelectedIndex] = React.useState(0);
