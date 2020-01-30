@@ -1,4 +1,1 @@
-export interface LoginState {
-	IDNumber: string;
-	password: string;
-}
+export interface LoginState {}

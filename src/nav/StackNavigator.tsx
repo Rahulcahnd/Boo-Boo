@@ -14,7 +14,8 @@ const Navigator = createStackNavigator(
 		Product: ProductScreen
 	},
 	{
-		headerMode: "none"
+		headerMode: "none",
+		initialRouteName: "Login"
 	}
 );
 

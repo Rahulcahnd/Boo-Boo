@@ -1,14 +1,66 @@
 import React from "react";
-import { createAppContainer } from "react-navigation";
-import { createStackNavigator } from "react-navigation-stack";
-import { View, Text } from "react-native";
+import { View, KeyboardAvoidingView, ImageBackground } from "react-native";
+import { LoginState } from "../_types/LoginState";
+import { LoginProps } from "../_types/LoginProps";
+import { Input, Text, Button } from "@ui-kitten/components";
 
-export default class Login extends React.Component {
+export default class Login extends React.Component<LoginState, LoginProps> {
+	constructor(props: LoginProps) {
+		super(props);
+		this.state = {
+			userID: "",
+			password: ""
+		};
+	}
+
+	private onUserIDChange = (userID: string): void => {
+		this.setState({ userID });
+	};
+
+	private onPasswordChange = (password: string): void => {
+		this.setState({ password });
+	};
+
 	render() {
 		return (
-			<View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-				<Text>Login Screen</Text>
-			</View>
+			<ImageBackground
+				style={{
+					flex: 1
+				}}
+				source={{
+					uri:
+						"https://images.unsplash.com/photo-1500835556837-99ac94a94552?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
+				}}
+			>
+				<KeyboardAvoidingView>
+					<View>
+						<Text status="control" category="h4">
+							Log In
+						</Text>
+
+						<Input
+							placeholder="User ID"
+							value={this.state.userID}
+							onChangeText={this.onUserIDChange}
+							label="User ID"
+						/>
+						<Input
+							placeholder="Password"
+							value={this.state.password}
+							onChangeText={this.onPasswordChange}
+							secureTextEntry={true}
+							label="Password"
+						/>
+						<Button
+							status="control"
+							size="large"
+							onPress={() => this.props.navigation.navigate("Home")}
+						>
+							SIGN IN
+						</Button>
+					</View>
+				</KeyboardAvoidingView>
+			</ImageBackground>
 		);
 	}
 }

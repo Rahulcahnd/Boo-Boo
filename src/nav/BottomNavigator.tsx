@@ -18,8 +18,14 @@ export const BottomNavigator = () => {
 			selectedIndex={selectedIndex}
 			onSelect={setSelectedIndex}
 		>
-			<BottomNavigationTab icon={Scan} />
-			<BottomNavigationTab icon={Settings} />
+			<BottomNavigationTab
+				icon={Scan}
+				onPress={() => this.props.navigation.navigate("Scan")}
+			/>
+			<BottomNavigationTab
+				icon={Settings}
+				onPress={() => this.props.navigation.navigate("Settings")}
+			/>
 		</BottomNavigation>
 	);
 };
