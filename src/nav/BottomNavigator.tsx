@@ -3,10 +3,12 @@ import { StyleSheet, Image } from "react-native";
 import { BottomNavigation, BottomNavigationTab } from "@ui-kitten/components";
 
 const Settings = () => (
-	<Image source={require("../common/icons/settings.png")} />
+	<Image source={require("../../assets/icons/settings.png")} />
 );
 
-const Scan = () => <Image source={require("../common/icons/scanner.png")} />;
+const Scanner = () => (
+	<Image source={require("../../assets/icons/scanner.png")} />
+);
 
 export const BottomNavigator = () => {
 	const [selectedIndex, setSelectedIndex] = React.useState(0);
@@ -18,10 +20,7 @@ export const BottomNavigator = () => {
 			selectedIndex={selectedIndex}
 			onSelect={setSelectedIndex}
 		>
-			<BottomNavigationTab
-				icon={Scan}
-				onPress={() => this.props.navigation.navigate("Scan")}
-			/>
+			<BottomNavigationTab icon={Scanner} />
 			<BottomNavigationTab
 				icon={Settings}
 				onPress={() => this.props.navigation.navigate("Settings")}

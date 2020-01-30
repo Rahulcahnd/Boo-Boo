@@ -45,6 +45,7 @@ export default class Login extends React.Component<LoginState, LoginProps> {
 							value={this.state.userID}
 							onChangeText={this.onUserIDChange}
 							label="User ID"
+							keyboardType="numeric"
 						/>
 						<Input
 							placeholder="Password"
@@ -52,6 +53,7 @@ export default class Login extends React.Component<LoginState, LoginProps> {
 							onChangeText={this.onPasswordChange}
 							secureTextEntry={true}
 							label="Password"
+							keyboardType="numeric"
 						/>
 
 						<Button
