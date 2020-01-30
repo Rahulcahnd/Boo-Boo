@@ -24,9 +24,7 @@ export default class Login extends React.Component<LoginState, LoginProps> {
 	render() {
 		return (
 			<ImageBackground
-				style={{
-					flex: 1
-				}}
+				style={{ flex: 1 }}
 				source={{
 					uri:
 						"https://images.unsplash.com/photo-1500835556837-99ac94a94552?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
@@ -34,10 +32,14 @@ export default class Login extends React.Component<LoginState, LoginProps> {
 			>
 				<KeyboardAvoidingView>
 					<View>
-						<Text status="control" category="h4">
-							Log In
+						<Text category="h1" status="control">
+							Hello
 						</Text>
-
+						<Text category="s1" status="control">
+							Sign in to your account
+						</Text>
+					</View>
+					<View>
 						<Input
 							placeholder="User ID"
 							value={this.state.userID}
@@ -51,12 +53,13 @@ export default class Login extends React.Component<LoginState, LoginProps> {
 							secureTextEntry={true}
 							label="Password"
 						/>
+
 						<Button
 							status="control"
 							size="large"
 							onPress={() => this.props.navigation.navigate("Home")}
 						>
-							SIGN IN
+							Log In
 						</Button>
 					</View>
 				</KeyboardAvoidingView>
