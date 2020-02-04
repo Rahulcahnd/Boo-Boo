@@ -1214,6 +1214,16 @@
     hoist-non-react-statics "^3.2.1"
     lodash.merge "^4.6.1"
 
+"@ui-kitten/date-fns@^4.3.2":
+  version "4.3.2"
+  resolved "https://registry.yarnpkg.com/@ui-kitten/date-fns/-/date-fns-4.3.2.tgz#253b6394f8ce6adbf7dba4f06fadf6b7d7b6144e"
+  integrity sha512-7mtmnG2RkAjk4jTYkzBKN39Lz4Qa+pmXQtslLrl/fsUdNgA7IE/RA25xcoHjbqBKwX9OvcR+TH3+qi84xU8yRg==
+
+"@ui-kitten/moment@^4.3.2":
+  version "4.3.2"
+  resolved "https://registry.yarnpkg.com/@ui-kitten/moment/-/moment-4.3.2.tgz#e883cc09750a783d15c07a7d948501548f46ab7d"
+  integrity sha512-wmd4ibH6LL8Rd+jTAQANsu+gbNh9HXVhH8IyohuLhI9BTadjVAtE3NyNSM3gVg6MuTNUi+eTOfQalhRFiZWThQ==
+
 "@unimodules/core@~5.0.0":
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/@unimodules/core/-/core-5.0.0.tgz#e1e3ca3f91f3d27dbc93c6eebc03a40c711da755"

@@ -6,9 +6,8 @@ import Login from "../login/_components/Login";
 import React from "react";
 import { BottomNavigator } from "../../nav/BottomNavigator";
 import { StackNavigator } from "../../nav/StackNavigator";
-import { View, Text } from "react-native";
 
-function cacheImages(images: any) {
+function cacheImages(images: any[]) {
 	return images.map((image: string) => {
 		if (typeof image === "string") {
 			return Image.prefetch(image);
@@ -32,7 +31,8 @@ export default class AppSplash extends React.Component<
 	async _loadAssetsAsync() {
 		const imageAssets = cacheImages([
 			require("../../../assets/icons/settings.png"),
-			require("../../../assets/icons/scanner.png")
+			require("../../../assets/icons/scanner.png"),
+			require("../../../assets/images/background-image.jpg")
 		]);
 		await Promise.all([...imageAssets]);
 	}
@@ -47,6 +47,6 @@ export default class AppSplash extends React.Component<
 			);
 		}
 
-		return <View />;
+		return <StackNavigator />;
 	}
 }
