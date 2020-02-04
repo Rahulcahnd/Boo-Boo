@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { ScrollView, View, Text, Image, StyleSheet } from "react-native";
 import { Button, Layout, Card } from "@ui-kitten/components";
+import ServiceHistoryListComponent from "./_components/ServiceHistoryListComponent";
+import ServiceHistoryList from "./_components/ServiceHistoryListContainer";
 
 export default class ProductDetails extends React.Component {
 	render() {
@@ -55,7 +57,9 @@ export default class ProductDetails extends React.Component {
 						>
 							GHOST
 						</Button>
-						<View style={{ flex: 1 }}></View>
+						<View style={{ flex: 1 }}>
+							<ServiceHistoryList />
+						</View>
 					</View>
 				</View>
 			</ScrollView>
