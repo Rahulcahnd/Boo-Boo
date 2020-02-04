@@ -5,13 +5,10 @@ import { mapping, light as lightTheme } from "@eva-design/eva";
 import { BottomNavigator } from "./src/nav/BottomNavigator";
 import StackNavigator from "./src/nav/StackNavigator";
 import AppSplash from "./src/modules/app_splash/AppSplash";
-//import {  ScanScreen} from './src/modules/Qrcode/scan'
-import Scanner from './src/modules/Qrcode/sancode'
+import Scanner from "./src/modules/scanner/Scanner";
 export default function App() {
 	return (
 		<ApplicationProvider mapping={mapping} theme={lightTheme}>
-			<AppSplash />
-			<Scanner />
 			<StackNavigator />
 		</ApplicationProvider>
 	);

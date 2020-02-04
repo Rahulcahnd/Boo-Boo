@@ -7,6 +7,7 @@ import Home from "../modules/home/_components/Home";
 import ProductScreen from "../modules/product_screen/_components/ProductScreen";
 import AppSplash from "../modules/app_splash/AppSplash";
 import { BottomNavigator } from "./BottomNavigator";
+import Scanner from "../modules/scanner/Scanner";
 
 const Navigator = createStackNavigator(
 	{
@@ -15,11 +16,12 @@ const Navigator = createStackNavigator(
 		Home: Home,
 		Product: ProductScreen,
 		Cache: AppSplash,
-		BottomTabNavigator: BottomNavigator
+		BottomTabNavigator: BottomNavigator,
+		Scanner: Scanner
 	},
 	{
 		headerMode: "none",
-		initialRouteName: ""
+		initialRouteName: "Scanner"
 	}
 );
 
