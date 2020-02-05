@@ -1,8 +1,9 @@
 import React from "react";
-import { View, KeyboardAvoidingView, ImageBackground } from "react-native";
+import { View, KeyboardAvoidingView, Image } from "react-native";
 import { LoginState } from "../_types/LoginState";
 import { LoginProps } from "../_types/LoginProps";
-import { Input, Text, Button } from "@ui-kitten/components";
+import { Input, Text, Button } from "@ui-kitten/components"
+import { styles } from '../_styles/Styles';
 
 export default class Login extends React.Component<LoginState, LoginProps> {
 	constructor(props: LoginProps) {
@@ -20,36 +21,50 @@ export default class Login extends React.Component<LoginState, LoginProps> {
 	private onPasswordChange = (password: string): void => {
 		this.setState({ password });
 	};
+	private isValidInputCode = () => {
+		let expr2 = /\d{6}/
+		return expr2.test(this.state.password) ? 'success' : 'danger'
+	}
+
+	private isValidInputValue = () => {
+		let expr2 = /\d{10}/
+		return expr2.test(this.state.userID) ? 'success' : 'danger'
+	}
+
+
 
 	render() {
 		return (
-			<ImageBackground
-				style={{ flex: 1 }}
-				source={{
-					uri:
-						"https://images.unsplash.com/photo-1500835556837-99ac94a94552?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
-				}}
-			>
-				<KeyboardAvoidingView>
+			<View style={{ flex: 1 }}>
+				<Image
+					style={styles.headerContainer}
+					source={{
+						uri:
+							"https://www.jakpost.travel/wimages/large/39-399602_airport-sunset-wallpaper-hd-plane.jpg"
+					}}
+				/>
+				<KeyboardAvoidingView style={styles.container}>
 					<View>
-						<Text category="h1" status="control">
-							Hello
-						</Text>
-						<Text category="s1" status="control">
+						
+						<Text category="s1" status="control" style={styles.text1}>
 							Sign in to your account
 						</Text>
 					</View>
-					<View>
+					<View >
 						<Input
+							style={styles.input}
 							placeholder="User ID"
 							value={this.state.userID}
+							status={this.isValidInputValue()}
 							onChangeText={this.onUserIDChange}
 							label="User ID"
 							keyboardType="numeric"
 						/>
 						<Input
+							style={styles.input1}
 							placeholder="Password"
 							value={this.state.password}
+							status={this.isValidInputCode()}
 							onChangeText={this.onPasswordChange}
 							secureTextEntry={true}
 							label="Password"
@@ -57,6 +72,7 @@ export default class Login extends React.Component<LoginState, LoginProps> {
 						/>
 
 						<Button
+							style={styles.button1}
 							status="control"
 							size="large"
 							onPress={() => this.props.navigation.navigate("Home")}
@@ -65,7 +81,7 @@ export default class Login extends React.Component<LoginState, LoginProps> {
 						</Button>
 					</View>
 				</KeyboardAvoidingView>
-			</ImageBackground>
+			</View>
 		);
 	}
 }
