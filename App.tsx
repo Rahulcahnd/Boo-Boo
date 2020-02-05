@@ -5,12 +5,12 @@ import { mapping, light as lightTheme } from "@eva-design/eva";
 import { BottomNavigator } from "./src/nav/BottomNavigator";
 import StackNavigator from "./src/nav/StackNavigator";
 import AppSplash from "./src/modules/app_splash/AppSplash";
+import SqlTest from "./src/modules/login/sqlTest";
 
 export default function App() {
 	return (
 		<ApplicationProvider mapping={mapping} theme={lightTheme}>
-			<AppSplash />
-			<StackNavigator />
+			<SqlTest />
 		</ApplicationProvider>
 	);
 }

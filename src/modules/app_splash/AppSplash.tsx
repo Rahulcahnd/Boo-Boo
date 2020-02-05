@@ -1,5 +1,5 @@
 import { Asset } from "expo-asset";
-import { AppLoading } from "expo";
+import { AppLoading, SQLite } from "expo";
 import { AppSplashProps } from "./_types/AppSplashProps";
 import { AppSplashState } from "./_types/AppSplashState";
 import Login from "../login/_components/Login";
