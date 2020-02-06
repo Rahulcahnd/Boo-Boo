@@ -2,8 +2,8 @@ import React from "react";
 import { View, KeyboardAvoidingView, Image } from "react-native";
 import { LoginState } from "../_types/LoginState";
 import { LoginProps } from "../_types/LoginProps";
-import { Input, Text, Button } from "@ui-kitten/components"
-import { styles } from '../_styles/Styles';
+import { Input, Text, Button } from "@ui-kitten/components";
+import { styles } from "../_styles/Styles";
 
 export default class Login extends React.Component<LoginState, LoginProps> {
 	constructor(props: LoginProps) {
@@ -22,16 +22,14 @@ export default class Login extends React.Component<LoginState, LoginProps> {
 		this.setState({ password });
 	};
 	private isValidInputCode = () => {
-		let expr2 = /\d{6}/
-		return expr2.test(this.state.password) ? 'success' : 'danger'
-	}
+		let expr2 = /\d{6}/;
+		return expr2.test(this.state.password) ? "success" : "danger";
+	};
 
 	private isValidInputValue = () => {
-		let expr2 = /\d{10}/
-		return expr2.test(this.state.userID) ? 'success' : 'danger'
-	}
-
-
+		let expr2 = /\d{10}/;
+		return expr2.test(this.state.userID) ? "success" : "danger";
+	};
 
 	render() {
 		return (
@@ -45,12 +43,11 @@ export default class Login extends React.Component<LoginState, LoginProps> {
 				/>
 				<KeyboardAvoidingView style={styles.container}>
 					<View>
-						
 						<Text category="s1" status="control" style={styles.text1}>
 							Sign in to your account
 						</Text>
 					</View>
-					<View >
+					<View>
 						<Input
 							style={styles.input}
 							placeholder="User ID"
